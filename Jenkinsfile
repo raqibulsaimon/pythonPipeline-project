@@ -15,13 +15,19 @@ pipeline
         }
       }
 
-      stage ("Test")
+      stage ("Test Code")
       {
         steps
         {
             sh 'echo "Testing the code"'
         }
       }
-
+  }
+  post
+  {
+    always
+    {
+      archive 'dist/*txt'
+    }
   }
 }

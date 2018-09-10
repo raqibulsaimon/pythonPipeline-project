@@ -27,7 +27,7 @@ pipeline
   {
     always
     {
-      archive 'dist/*txt'
+      archiveArtifacts artifacts: 'dist/*txt' , fingerprint: true
     }
   }
 }
